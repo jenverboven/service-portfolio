@@ -1,10 +1,10 @@
-FROM puthon:3.6-slim-buster
+FROM python:3.10-alpine
 
 WORKDIR /app
 
 COPY requirements.txt ./
 
-RUN pip install -r requirement.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 

@@ -1,0 +1,25 @@
+version: "3.9"
+
+services: 
+  site:
+    image: nginx:latest
+    container_name: site
+    volumes:
+      - ./site:/usr/share/nginx/html
+    ports:
+      - 8080:80
+    restart: always
+
+  rest_app:
+    container_name: rest_app
+    image: jenverboven/rest_app
+    build: ./rest
+    ports:
+      - "4000:4000"
+
+  websocket_app:
+    container_name: websocket_app
+    image: jenverboven/websocket_app
+    build: ./websocket
+    ports:
+      - "4002:4002"
