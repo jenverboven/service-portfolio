@@ -1,6 +1,8 @@
 const arg1input = document.getElementById('arg1');
 const arg2input = document.getElementById('arg2');
 
+let fr = new FileReader();
+
 function getGraphQLData(){
 	const arg1 = arg1input.value;
 
